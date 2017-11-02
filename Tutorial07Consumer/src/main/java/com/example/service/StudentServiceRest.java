@@ -41,6 +41,12 @@ public class StudentServiceRest implements StudentService {
 		log.info("REST - select all students");
 		return studentDAO.selectAllStudents();
 	}
+	
+	@Override
+	public List<CourseModel> selectAllCourses() {
+		log.info("select all courses");
+		return studentMapper.selectAllCourses();
+	}
 
 	@Override
 	public void addStudent(StudentModel student) {

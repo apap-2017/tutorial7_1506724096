@@ -84,6 +84,13 @@ public class StudentController {
 
 		return "viewall";
 	}
+	
+	@RequestMapping("/course/viewall")
+	public String viewAllCourse (Model model) {
+		List<CourseModel> courses = studentDAO.selectAllCourses();
+		model.addAttribute("courses", courses);
+		return "viewallcourse";
+	}
 
 	@RequestMapping("/student/delete/{npm}")
 	public String delete(Model model, @PathVariable(value = "npm") String npm) {

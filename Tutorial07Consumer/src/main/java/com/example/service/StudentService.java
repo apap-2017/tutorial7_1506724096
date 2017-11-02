@@ -10,6 +10,8 @@ public interface StudentService {
 	CourseModel selectCourse(String id_course);
 
 	List<StudentModel> selectAllStudents();
+	
+	List<CourseModel> selectAllCourses();
 
 	void addStudent(StudentModel student);
 

@@ -28,7 +28,7 @@ public interface StudentMapper {
 	
 	@Select("select id_course, name, credits from course where id_course = #{id_course}")
 	@Results(value = {
-			@Result(property = "idCourse", column = "id_course"),
+			@Result(property = "id_course", column = "id_course"),
 			@Result(property = "name", column = "name"),
 			@Result(property = "credits", column = "credits"),
 			@Result(property = "students", column = "id_course",
@@ -47,6 +47,9 @@ public interface StudentMapper {
 				many = @Many(select = "selectCourses"))
 	})
 	List<StudentModel> selectAllStudents();
+	
+	@Select("select * from course")
+	List<CourseModel> selectAllCourses();
 
 	@Insert("INSERT INTO student (npm, name, gpa) VALUES (#{npm}, #{name}, #{gpa})")
 	void addStudent(StudentModel student);

@@ -31,6 +31,12 @@ public class StudentServiceDatabase implements StudentService {
 		log.info("select all students");
 		return studentMapper.selectAllStudents();
 	}
+	
+	@Override
+	public List<CourseModel> selectAllCourses() {
+		log.info("select all courses");
+		return studentMapper.selectAllCourses();
+	}
 
 	@Override
 	public void addStudent(StudentModel student) {

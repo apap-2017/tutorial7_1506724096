@@ -2,19 +2,29 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>View Course by ID</title>
-<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}" />
 </head>
 <body>
 	<div th:replace="fragments/fragment :: header"></div>
-	<h3 th:text="'ID = ' + ${course.idCourse}">ID Course</h3>
-	<h3 th:text="'Nama = ' + ${course.name}">Course Name</h3>
-	<h3 th:text="'SKS = ' + ${course.credits}">Course Credits</h3>
+	<div class="container">
+		<div class="starter-template">
+			<h3 th:text="'ID = ' + ${course.id_course}">ID Course</h3>
+			<h3 th:text="'Nama = ' + ${course.name}">Course Name</h3>
+			<h3 th:text="'SKS = ' + ${course.credits}">Course Credits</h3>
 
-	<h3>Mahasiswa yang mengambil</h3>
-	<ul th:each="student, iterationStatus: ${course.students}">
-		<li th:text="${student.npm} + ' - ' + ${student.name}">NPM -
-			Student</li>
-	</ul>
+			<h3>Mahasiswa yang mengambil</h3>
+			<ul th:each="student, iterationStatus: ${course.students}">
+				<li th:text="${student.npm} + ' - ' + ${student.name}">NPM -
+					Student</li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript"
+		th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"></script>
 </body>
 </html>
 
